@@ -1,5 +1,8 @@
 package com.khokhlov.consts;
 
+import lombok.experimental.UtilityClass;
+
+@UtilityClass
 public class Consts {
     public static final String PATH_TO_JSON = "data.json";
     public static final String DATA = "data";

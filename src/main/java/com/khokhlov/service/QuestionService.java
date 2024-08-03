@@ -30,7 +30,8 @@ public class QuestionService {
                 return objectMapper.readValue(data, Data.class);
             }
         } catch (URISyntaxException | IOException e) {
-            throw new RuntimeException(e);
+            System.err.println(e.getMessage());
         }
+        return null;
     }
 }

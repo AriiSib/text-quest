@@ -8,7 +8,3 @@ public class Answer {
     public String name;
     public int question;
 }
-
-
-
-
