@@ -1,21 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.khokhlov</groupId>
-  <artifactId>text-quest</artifactId>
-  <packaging>war</packaging>
   <version>1.0</version>
+  <artifactId>text-quest</artifactId>
   <name>text-quest Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <packaging>war</packaging>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>21</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+
+    <junit.version>5.10.0</junit.version>
+    <jstl-api.version>3.0.0</jstl-api.version>
+    <jstl.version>3.0.1</jstl.version>
+    <jakartaee-web-api.version>10.0.0</jakartaee-web-api.version>
+    <lombok.version>1.18.32</lombok.version>
+    <jackson.version>2.17.1</jackson.version>
+    <compiler-plugin.verison>3.8.1</compiler-plugin.verison>
+    <maven-war-plugin.verison>3.4.0</maven-war-plugin.verison>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>projectlombok.org</id>
+      <url>https://projectlombok.org/edge-releases</url>
+    </repository>
+    <repository>
+      <id>maven_central</id>
+      <name>Maven Central</name>
+      <url>https://repo.maven.apache.org/maven2/</url>
+    </repository>
+  </repositories>
+
+
   <dependencies>
+
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <groupId>jakarta.servlet.jsp.jstl</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+      <version>${jstl-api.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.web</groupId>
+      <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+      <version>${jstl.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>jakarta.platform</groupId>
+      <artifactId>jakarta.jakartaee-web-api</artifactId>
+      <version>${jakartaee-web-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.version}</version>
+    </dependency>
+
   </dependencies>
+
   <build>
-    <finalName>text-quest</finalName>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${compiler-plugin.verison}</version>
+        <configuration>
+          <source>21</source>
+          <target>21</target>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven-war-plugin.verison}</version>
+      </plugin>
+
+    </plugins>
   </build>
 </project>
