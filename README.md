@@ -1,8 +1,8 @@
 # Java Developer's Quest
 
 ## Project Description
-Welcome to the Java Developer's Quest, where you embark on a journey to become a proficient Java developer.
-Navigate through various learning paths and challenges to shape your career in the world of programming.
+Java Developer's Quest is a project designed to help you become a proficient Java developer.
+It offers various learning paths and challenges to enhance your programming skills and advance your career in software development.
 
 ## Technologies
 - Java 21
